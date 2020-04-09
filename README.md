@@ -8,12 +8,75 @@ Demo of the API can be found [here](https://4j222wktag.execute-api.ap-southeast-
 
 # API Usage
 
+## Get All Cases
+
+**Endpoint**: [https://4j222wktag.execute-api.ap-southeast-1.amazonaws.com/dev/covid](https://4j222wktag.execute-api.ap-southeast-1.amazonaws.com/dev/covid)
+```bash
+$ curl https://4j222wktag.execute-api.ap-southeast-1.amazonaws.com/dev/covid
 ```
 
-  /* Get all cases per country */
-  {url}
-  
-  /* Get cases by country name */
-  {url}?country=Japan
+**Response:**
+```json
+[
+   {
+      "country":{
+         "name":"US",
+         "latitude":40,
+         "longitude":-100
+      },
+      "confirmed":432438,
+      "deaths":14808,
+      "active":0,
+      "recovered":24125,
+      "lastupdate":1586417611
+   },
+   {
+      "country":{
+         "name":"Spain",
+         "latitude":40.463667,
+         "longitude":-3.74922
+      },
+      "confirmed":148220,
+      "deaths":14792,
+      "active":85407,
+      "recovered":48021,
+      "lastupdate":1586417592
+   },
+   {
+      "country":{
+         "name":"Italy",
+         "latitude":41.8719,
+         "longitude":12.5674
+      },
+      "confirmed":139422,
+      "deaths":17669,
+      "active":95262,
+      "recovered":26491,
+      "lastupdate":1586417592
+   },
+...
+```
 
+
+## Get Cases by Country
+
+**Endpoint**: [https://4j222wktag.execute-api.ap-southeast-1.amazonaws.com/dev/covid?country=Italy](https://4j222wktag.execute-api.ap-southeast-1.amazonaws.com/dev/covid?country=Italy)
+```bash
+$ curl https://4j222wktag.execute-api.ap-southeast-1.amazonaws.com/dev/covid?country=Italy
+```
+
+**Response:**
+```json
+{
+  "country":{
+     "name":"Italy",
+     "latitude":41.8719,
+     "longitude":12.5674
+  },
+  "confirmed":139422,
+  "deaths":17669,
+  "active":95262,
+  "recovered":26491,
+  "lastupdate":1586417592
+}
 ```
